@@ -1,0 +1,11 @@
+// ═══════════════════════════════════
+// GIUSTO GUSTO — Main Entry
+// ═══════════════════════════════════
+//
+// Compile:
+//   npx sass scss/style.scss css/style.css --style=compressed --watch
+//
+
+@use 'base';        // tokens, reset, utilities
+@use 'layout';      // preloader, video, header, hero, bottom-bar, animations
+@use 'components';  // buttons, section-cards, chips, meta rows
