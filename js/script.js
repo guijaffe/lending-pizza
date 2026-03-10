@@ -19,7 +19,6 @@
       if (!el || el.classList.contains('is-hidden')) return;
       el.classList.add('is-hidden');
       document.body.classList.add('is-loaded');
-      if (video) video.classList.add('is-visible');
     };
 
     const finish = (() => {
