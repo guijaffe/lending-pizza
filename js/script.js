@@ -42,10 +42,22 @@
 
   let activeCard = null;
 
-  function toggleBg(show) {
-    const img = $('#bg-image');
+  function toggleBg(show, sectionId) {
     const vid = $('#bg-video');
-    if (img) img.classList.toggle('is-visible', show);
+    // Hide all section backgrounds first
+    $$('.section-bg').forEach(bg => bg.classList.remove('is-visible'));
+    // Hide default fallback
+    const fallback = $('#bg-image');
+    if (fallback) fallback.classList.remove('is-visible');
+
+    if (show && sectionId) {
+      const sectionBg = $(`.section-bg[data-section-bg="${sectionId}"]`);
+      if (sectionBg) {
+        sectionBg.classList.add('is-visible');
+      } else if (fallback) {
+        fallback.classList.add('is-visible');
+      }
+    }
     if (vid) vid.style.opacity = show ? '0' : '';
   }
 
@@ -75,11 +87,13 @@
     if (isOpen) {
       activeCard = card;
       setActive(id);
-      toggleBg(true);
+      toggleBg(true, id);
+      document.body.classList.add('section-open');
     } else {
       activeCard = null;
       clearActive();
-      toggleBg(false);
+      toggleBg(false, null);
+      document.body.classList.remove('section-open');
     }
   }
 
@@ -90,7 +104,8 @@
     });
     activeCard = null;
     clearActive();
-    toggleBg(false);
+    toggleBg(false, null);
+    document.body.classList.remove('section-open');
   }
 
   // ---- Init ----
@@ -118,7 +133,8 @@
         card.setAttribute('aria-hidden', 'true');
         if (activeCard === card) activeCard = null;
         clearActive();
-        toggleBg(false);
+        toggleBg(false, null);
+        document.body.classList.remove('section-open');
       });
     });
 

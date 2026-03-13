@@ -4,10 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/img/logo-dark.svg" />
+
     <!-- SEO -->
-    <title>Giusto Gusto — итальянский ресторан в Санкт-Петербурге | Пицца из дровяной печи</title>
-    <meta name="description" content="Giusto Gusto — камерный итальянский ресторан с открытой кухней в Санкт-Петербурге. Неаполитанская пицца из дровяной печи, свежая паста, сезонные продукты. Бронирование: +7 (999) 176‑28‑68." />
-    <meta name="keywords" content="Giusto Gusto, итальянский ресторан, пицца, неаполитанская пицца, дровяная печь, паста, ресторан Санкт-Петербург, бронирование, доставка" />
+    <title>Giusto Gusto — итальянское кафе в Санкт-Петербурге | Неаполитанская пицца из дровяной печи</title>
+    <meta name="description" content="Giusto Gusto — итальянское кафе премиум-класса с открытой кухней в Санкт-Петербурге. Неаполитанская пицца из дровяной печи, свежая паста, натуральные продукты. Доставка и бронирование: +7 (999) 176‑28‑68." />
+    <meta name="keywords" content="Giusto Gusto, итальянское кафе, кафе Санкт-Петербург, неаполитанская пицца, пицца из дровяной печи, свежая паста, куда сходить поесть, доставка еды, итальянская кухня, кафе с доставкой, где поесть пиццу, бронирование столика" />
     <meta name="author" content="Giusto Gusto" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://giustogusto.ru/" />
@@ -19,8 +23,8 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="restaurant" />
-    <meta property="og:title" content="Giusto Gusto — итальянский ресторан" />
-    <meta property="og:description" content="Неаполитанская пицца из дровяной печи, свежая паста, сезонные продукты. Бронирование: +7 (999) 176‑28‑68." />
+    <meta property="og:title" content="Giusto Gusto — итальянское кафе" />
+    <meta property="og:description" content="Неаполитанская пицца из дровяной печи, свежая паста, натуральные продукты. Доставка и бронирование: +7 (999) 176‑28‑68." />
     <meta property="og:url" content="https://giustogusto.ru/" />
     <meta property="og:site_name" content="Giusto Gusto" />
     <meta property="og:locale" content="ru_RU" />
@@ -30,8 +34,8 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Giusto Gusto — итальянский ресторан" />
-    <meta name="twitter:description" content="Неаполитанская пицца из дровяной печи, свежая паста и сезонные продукты." />
+    <meta name="twitter:title" content="Giusto Gusto — итальянское кафе" />
+    <meta name="twitter:description" content="Неаполитанская пицца из дровяной печи, свежая паста и натуральные продукты." />
     <meta name="twitter:image" content="https://giustogusto.ru/assets/img/bg-pizza.png" />
 
     <!-- Fonts -->
@@ -47,7 +51,7 @@
       "@context": "https://schema.org",
       "@type": "Restaurant",
       "name": "Giusto Gusto",
-      "description": "Камерный итальянский ресторан с открытой кухней: неаполитанская пицца из дровяной печи, свежая паста, сезонные продукты.",
+      "description": "Итальянское кафе премиум-класса с открытой кухней: неаполитанская пицца из дровяной печи, свежая паста, натуральные продукты.",
       "url": "https://giustogusto.ru/",
       "telephone": "+79991762868",
       "email": "info@giustogusto.ru",
@@ -59,11 +63,14 @@
       ],
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Набережная реки Фонтанки, 109",
         "addressLocality": "Санкт-Петербург",
         "addressCountry": "RU"
       },
       "geo": {
-        "@type": "GeoCoordinates"
+        "@type": "GeoCoordinates",
+        "latitude": 59.922896,
+        "longitude": 30.319174
       },
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
@@ -92,8 +99,11 @@
         <source src="assets/video/bg.mp4" type="video/mp4" />
       </video>
       <img class="bg-image" id="bg-image" src="assets/img/bg-pizza.png" alt="" />
+      <img class="bg-image section-bg" data-section-bg="about-section" src="assets/img/about-bg.jpg" alt="" />
+      <img class="bg-image section-bg" data-section-bg="contacts-section" src="assets/img/contacts-bg.jpg" alt="" />
       <div class="vignette"></div>
       <div class="grain"></div>
+      <div class="section-overlay"></div>
     </div>
 
     <!-- Header -->
@@ -111,19 +121,15 @@
     <main>
       <section class="hero" id="hero" aria-labelledby="hero-title">
 
-        <div class="hero__top">
-          <p class="hero__cuisine">
-            <em>Пицца</em><span class="sep">·</span><em>Паста</em><span class="sep">·</span><em>Салаты</em><span class="sep">·</span><em>Стритфуд</em><span class="sep">·</span><em>Гриль</em><span class="sep">·</span><em>Десерты</em><span class="sep">·</span><em>Супы</em><span class="sep">·</span><em>Напитки</em>
-          </p>
-        </div>
+        <div class="hero__top" aria-hidden="true"></div>
 
         <div class="hero__center">
           <h1 id="hero-title" itemprop="name">
-            <img class="hero__logo" src="assets/img/logo-light-full.svg" alt="Giusto Gusto — итальянский ресторан" width="420" height="240" />
+            <img class="hero__logo" src="assets/img/logo-light-full.svg" alt="Giusto Gusto — итальянское кафе" width="420" height="240" />
           </h1>
           <div class="hero__line"></div>
           <p class="hero__desc" itemprop="description">
-            Неаполитанская пицца из&nbsp;дровяной печи, свежая паста и&nbsp;сезонные продукты каждый день.
+            Неаполитанская пицца из&nbsp;дровяной печи,<br>свежая паста, гриль и&nbsp;натуральные продукты.
           </p>
         </div>
 
@@ -161,18 +167,23 @@
         <button class="section-card__close" data-close-section aria-label="Закрыть" type="button">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
-        <h2 id="about-title">О ресторане</h2>
-        <p>Giusto Gusto — это про настоящую Италию без&nbsp;пафоса. Открытая кухня, где пиццайоло работает у&nbsp;дровяной печи прямо у&nbsp;вас на&nbsp;глазах.</p>
-        <p>Мы готовим из&nbsp;сезонных продуктов: свежая паста каждый день, тесто на&nbsp;долгой ферментации, соусы по&nbsp;классическим рецептам. Простые ингредиенты, честный вкус.</p>
+        <h2 id="about-title">О нас</h2>
+        <p>Открытая кухня, дровяная печь и&nbsp;пиццайоло, который готовит прямо у&nbsp;вас на&nbsp;глазах. Заходите на&nbsp;обед, ужинайте с&nbsp;друзьями или берите с&nbsp;собой — мы работаем каждый день.</p>
+        <p>Тесто ведём на&nbsp;долгой ферментации, пасту готовим с&nbsp;утра, соусы — по&nbsp;классическим рецептам. Продукты натуральные, без&nbsp;полуфабрикатов.</p>
         <ul class="chips" role="list">
-          <li class="chip">Дровяная печь</li>
-          <li class="chip">Свежая паста</li>
-          <li class="chip">Доставка</li>
-          <li class="chip">Открытая кухня</li>
+          <li class="chip">Пицца</li>
+          <li class="chip">Паста</li>
+          <li class="chip">Салаты</li>
+          <li class="chip">Закуски</li>
+          <li class="chip">Стритфуд</li>
+          <li class="chip">Пучи</li>
+          <li class="chip">Гриль</li>
+          <li class="chip">Десерты</li>
+          <li class="chip">Супы</li>
+          <li class="chip">Напитки</li>
         </ul>
         <dl class="section-card__meta">
           <div class="meta-row"><dt>Часы</dt><dd><time datetime="11:00">11:00</time> – <time datetime="21:15">21:15</time>, ежедневно</dd></div>
-          <div class="meta-row"><dt>Доставка</dt><dd><a href="https://giustogusto.ru/" target="_blank" rel="noreferrer">giustogusto.ru</a></dd></div>
         </dl>
       </section>
 
@@ -182,18 +193,17 @@
         </button>
         <h2 id="contacts-title">Контакты</h2>
         <dl class="contact-rows">
-          <div class="meta-row"><dt>Телефон</dt><dd><a href="tel:+79991762868" itemprop="telephone">+7 (999) 176‑28‑68</a></dd></div>
+          <div class="meta-row"><dt>Телефон</dt><dd><a href="tel:+79991762868">+7 (999) 176‑28‑68</a></dd></div>
+          <div class="meta-row"><dt>Адрес</dt><dd itemprop="address">наб. р. Фонтанки, 109</dd></div>
           <div class="meta-row"><dt>E-mail</dt><dd><a href="mailto:info@giustogusto.ru">info@giustogusto.ru</a></dd></div>
           <div class="meta-row"><dt>VK</dt><dd><a href="https://vk.com/giustogusto" target="_blank" rel="noreferrer">vk.com/giustogusto</a></dd></div>
-          <div class="meta-row"><dt>Сайт</dt><dd><a href="https://giustogusto.ru/" target="_blank" rel="noreferrer" itemprop="url">giustogusto.ru</a></dd></div>
           <div class="meta-row"><dt>Часы</dt><dd>11:00 – 21:15, ежедневно</dd></div>
         </dl>
         <div class="section-card__map">
-          <iframe src="https://yandex.ru/map-widget/v1/?z=16&ol=biz&oid=1" width="100%" height="200" frameborder="0" allowfullscreen loading="lazy" style="border-radius:12px;opacity:.85"></iframe>
+          <iframe src="https://yandex.ru/map-widget/v1/?ll=30.319174%2C59.922896&z=17&pt=30.319174,59.922896,pm2rdm" width="100%" height="200" frameborder="0" allowfullscreen loading="lazy" style="border-radius:12px;opacity:.85"></iframe>
         </div>
-        <div class="section-card__actions">
+        <div class="section-card__actions" style="justify-content:center">
           <a class="btn btn--warm" href="tel:+79991762868">Позвонить</a>
-          <a class="btn btn--outline" href="https://giustogusto.ru/" target="_blank" rel="noreferrer">Доставка</a>
         </div>
       </section>
 
