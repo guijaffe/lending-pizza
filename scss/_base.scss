@@ -2,12 +2,17 @@
 // BASE: tokens, reset, utilities
 // ═══════════════════════════════════
 
-// --- Colors ---
-$c-bg:       #0c0a08;
-$c-text:     #f5ede3;
-$c-cream:    #f5ede3;
-$c-accent:   #E8453C;
-$c-purple:   #7B6FA6;
+// --- Brand palette ---
+$c-graphite:  #2A2A2A;
+$c-yellow:    #E6D48D;
+$c-red:       #E63D4C;
+$c-purple:    #5B5B9C;
+
+// --- UI Colors ---
+$c-bg:        #0c0a08;
+$c-text:      #f5ede3;
+$c-cream:     #f5ede3;
+$c-accent:    $c-red;
 
 // --- Layout ---
 $radius:     18px;
@@ -20,12 +25,18 @@ $f-serif: 'Cormorant Garamond', 'Georgia', serif;
 
 // --- CSS Custom Properties ---
 :root {
+  // Brand
+  --graphite:     #{$c-graphite};
+  --yellow:       #{$c-yellow};
+  --red:          #{$c-red};
+  --purple:       #{$c-purple};
+
+  // UI
   --bg:           #{$c-bg};
   --text:         #{$c-text};
   --muted:        rgba(#{$c-text}, .6);
   --cream:        #{$c-cream};
   --accent:       #{$c-accent};
-  --purple:       #{$c-purple};
   --glass:        rgba(12, 10, 8, .6);
   --glass-strong: rgba(18, 14, 10, .88);
   --glass-border: rgba(255, 255, 255, .08);

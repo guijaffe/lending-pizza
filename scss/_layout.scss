@@ -6,7 +6,7 @@
 .preloader {
   position: fixed; inset: 0; z-index: 1000;
   display: grid; place-items: center;
-  background: var(--cream);
+  background: var(--purple);
   transition: opacity 1s cubic-bezier(.4,0,.2,1), visibility 1s;
 
   &.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
@@ -21,7 +21,7 @@
 
   &__hint {
     font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
-    color: rgba(12,10,8,.4); margin-top: 24px;
+    color: rgba(236,225,224,.45); margin-top: 24px;
     opacity: 0;
     animation: logo-in .6s .6s ease forwards, hint-pulse 2s 1.2s ease-in-out infinite;
   }
