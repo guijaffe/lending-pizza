@@ -9,7 +9,10 @@
   background: var(--purple);
   transition: opacity 1s cubic-bezier(.4,0,.2,1), visibility 1s;
 
-  &.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+  &.is-hidden {
+    opacity: 0; visibility: hidden; pointer-events: none;
+    .preloader__logo, .preloader__hint { animation: none; opacity: 0; }
+  }
 
   &__inner { text-align: center; }
 
