@@ -114,6 +114,12 @@
     const yearEl = $('#year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+    // Track QR code scans via Metrika goal
+    if (location.hash === '#qr') {
+      history.replaceState(null, '', location.pathname);
+      if (typeof ym === 'function') ym(107738729, 'reachGoal', 'qr_scan');
+    }
+
     initPreloader();
 
     // Bottom bar
