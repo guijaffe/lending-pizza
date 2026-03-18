@@ -117,7 +117,16 @@
     // Track QR code scans via Metrika goal
     if (location.hash === '#qr') {
       history.replaceState(null, '', location.pathname);
-      if (typeof ym === 'function') ym(107738729, 'reachGoal', 'qr_scan');
+      // Metrika loads async — retry until ym() is available
+      let attempts = 0;
+      const sendGoal = setInterval(() => {
+        if (typeof ym === 'function') {
+          ym(107738729, 'reachGoal', 'qr_scan');
+          clearInterval(sendGoal);
+        } else if (++attempts > 15) {
+          clearInterval(sendGoal);
+        }
+      }, 200);
     }
 
     initPreloader();
