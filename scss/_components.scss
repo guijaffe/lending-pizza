@@ -60,7 +60,8 @@
   p { color: rgba(245,237,227,.6); font-size: 14px; line-height: 1.65; margin-bottom: 14px; }
 
   &__meta, .contact-rows { display: grid; gap: 0; }
-  &__actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+  &__map { margin-top: 20px; }
+  &__actions { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
 }
 
 
