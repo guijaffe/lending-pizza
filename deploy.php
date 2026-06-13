@@ -11,8 +11,7 @@ if (!hash_equals('sha256=' . hash_hmac('sha256', $body, $secret), $sig)) {
 // Pull latest changes
 $output = shell_exec('cd /var/www/giustogusto.ru/welcome && git pull 2>&1');
 
-// Sync the welcome page to root domain
-shell_exec('cp /var/www/giustogusto.ru/welcome/index.html /var/www/giustogusto.ru/index.html 2>&1');
+// No file copying needed anymore, Nginx handles it directly
 
 // Log
 file_put_contents('/tmp/deploy.log', date('Y-m-d H:i:s') . "\n" . $output . "\n\n", FILE_APPEND);
