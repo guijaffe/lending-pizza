@@ -6,7 +6,7 @@
 .preloader {
   position: fixed; inset: 0; z-index: 1000;
   display: grid; place-items: center;
-  background: var(--purple);
+  background: var(--graphite);
   transition: opacity 1s cubic-bezier(.4,0,.2,1), visibility 1s;
 
   &.is-hidden {
